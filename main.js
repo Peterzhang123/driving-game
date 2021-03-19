@@ -73,7 +73,7 @@ function upArrow(prevKey) {
       transform: `rotate(${degree}deg)`,
       transition: transition,
     })
-  }else{
+  } else {
     degree;
     img.css({
       transform: `rotate(${degree}deg)`,
@@ -84,25 +84,25 @@ function upArrow(prevKey) {
 
 function downArrow(prevKey) {
   if (prevKey == right) {
-    degree+=90;
+    degree += 90;
     img.css({
       transform: `rotate(${degree}deg)`,
       transition: transition,
     });
   } else if (prevKey == left) {
-    degree-=90;
-      img.css({
-        transform: `rotate(${degree}deg)`,
-        transition: transition,
-      });
+    degree -= 90;
+    img.css({
+      transform: `rotate(${degree}deg)`,
+      transition: transition,
+    });
   } else if (prevKey == up) {
-    degree+=180;
+    degree += 180;
     img.css({
       transform: `rotate(${degree}deg)`,
       transition: transition,
     });
   } else if (prevKey == 0) {
-    degree+=90;
+    degree += 90;
     img.css({
       transform: `rotate(${degree}deg)`,
       transition: transition,
@@ -118,25 +118,25 @@ function downArrow(prevKey) {
 
 function leftArrow(prevKey) {
   if (prevKey == right) {
-    degree+=180;
+    degree += 180;
     img.css({
       transform: `rotate(${degree}deg)`,
       transition: transition,
     })
   } else if (prevKey == up) {
-    degree-=90;
+    degree -= 90;
     img.css({
       transform: `rotate(${degree}deg)`,
       transition: transition,
     })
   } else if (prevKey == down) {
-    degree+=90;
+    degree += 90;
     img.css({
       transform: `rotate(${degree}deg)`,
       transition: transition,
     })
   } else if (prevKey == 0) {
-    degree+=180;
+    degree += 180;
     img.css({
       transform: `rotate(${degree}deg)`,
       transition: transition,
@@ -150,13 +150,13 @@ function leftArrow(prevKey) {
 
 function rightArrow(prevKey) {
   if (prevKey == left) {
-    degree+=180;
+    degree += 180;
     img.css({
       transform: `rotate(${degree}deg)`,
       transition: transition,
     });
   } else if (prevKey == up) {
-    degree+=90;
+    degree += 90;
     img.css({
       transform: `rotate(${degree}deg)`,
       transition: transition,
