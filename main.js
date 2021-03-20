@@ -7,12 +7,15 @@ function initialized() {
   keyboardClick();
 }
 
+var horizontalMove = 1;
+var verticalMove = 1;
 var ePreKey = 0;
 var eCurrKey = 0;
 var left = 37;
 var up = 38;
 var right = 39;
 var down = 40;
+var space = 32;
 var degree = 0;
 var img;
 var transition = "300ms ease all";
@@ -45,8 +48,59 @@ var lastKeyDown = function (prevKey, currKey) {
     upArrow(prevKey);
   } else if (currKey == down) {
     downArrow(prevKey);
+  } else if (currKey == space) {
+    startOrStop(prevKey, currKey);
   }
 }
+
+function startOrStop(prevKey, currKey) {
+  if (prevKey == right || prevKey == 0) {
+    setInterval(moveright,0);
+  } else if (prevKey == left) {
+    setInterval(moveleft,0);
+  } else if (prevKey == up) {
+    setInterval(moveup,0);
+  } else if (prevKey == down) {
+    setInterval(movebottom,0);
+  }
+}
+
+
+
+/* ---------  moveing direction  -------- */
+
+function moveright() {
+  horizontalMove++;
+  $("img").css({
+    "left":horizontalMove/40 + "%",
+    transform:transition
+  });
+}
+function moveleft() {
+  horizontalMove--;
+  $("img").css({
+    "left":horizontalMove/40 + "%",
+    transform:transition
+  });
+}
+function moveup() {
+  verticalMove--;
+  $("img").css({
+    "top":verticalMove/20 + "%",
+    transform:transition
+  });
+}
+function movebottom() {
+  verticalMove++;
+  $("img").css({
+    "top":verticalMove/20 + "%",
+    transform:transition
+  });
+}
+
+
+
+/* ---------  direction  ----------*/
 
 function upArrow(prevKey) {
   if (prevKey == left) {
